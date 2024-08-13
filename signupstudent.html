@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Signup</title>
+    <script src="typing.js" defer type="module"></script>
+    <link rel="stylesheet" href="signupstudent.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="form">
+        <h1 id="heading">Student Signup</h1>
+        <h3>Student Login</h3>
+        <img src="soslogin.jpeg" alt="School Logo" class="login-image"> 
+
+        
+        <form name="form">
+            <div class="input-box">
+                <label for="student-id">Student Name</label>
+                <input type="text" id="student-id" name="student-id" required>
+            </div>
+            <div class="input-box">
+                <label for="student-id">Student Email</label>
+                <input type="text" id="student-email" name="student-email" required>
+            </div>
+            <div class="input-box">
+                <label for="student-id">Password</label>
+                <input type="text" id="student-pass" name="student-pass" required>
+            </div>
+            <div class="input-box">
+                <label for="student-password">Retype Password</label>
+                <input type="password" id="student-rpassword" name="student-rpassword" required>
+            </div>
+            <button type="submit" href="Loginscreen.html">Signup as Student</button>
+        </form>
+        <div class="input">
+            <button id="google-login-btn" class="google-button">
+                <i class="fab fa-google"></i> Login with Google
+            </button>
+        </div>
+         
+        <div class="divider"></div>
+
+         
+        <button id="teacher-login-button">Login as Teacher</button>
+    </div>
+
+   
+    <script type="module">
+        document.getElementById('teacher-login-button').addEventListener('click', function() {
+            window.location.href = 'teacherlogin.html'; 
+        });
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAJG2-zWREG2-C5LBl2QM8bCu7Eq4kG6dA",
+            authDomain: "csia-e9a71.firebaseapp.com",
+            projectId: "csia-e9a71",
+            storageBucket: "csia-e9a71.appspot.com",
+            messagingSenderId: "740834778744",
+            appId: "1:740834778744:web:c00dc5bbfe00ac435f578d"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        auth.languageCode = 'en';
+        const provider = new GoogleAuthProvider();
+
+        const googleLogin = document.getElementById("google-login-btn");
+        googleLogin.addEventListener("click", function() {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                 const credential = GoogleAuthProvider.credentialFromResult(result);
+                 const token = credential.accessToken;
+                 const user = result.user;
+                 console.log(user);
+                 window.location.href = "Loginscreen.html"
+
+                 }).catch((error) => {
+                     const errorCode = error.code;
+                    const errorMessage = error.message;
+                
+                 });
+        });
+    </script>
+</body>
+</html>

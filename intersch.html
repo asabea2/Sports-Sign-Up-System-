@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="intersch.css">
+    
+</head>
+<body>
+    <div class="sidebar">
+        <a href="home.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="dash.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="signupsports.html"><i class="fas fa-calendar-alt"></i> Sign Up</a>
+        <a href="news.html"><i class="fas fa-tasks"></i> News</a>
+    </div>
+    <div class="content">
+        <div class="navbar">
+            <div class="logo">SOS-Hermann Gmeiner International College</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+            <div class="icons">
+                <a href="#"><i class="fas fa-bell"></i><span class="badge"></span></a> 
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+       <div class="main">
+        <h2>ISSAG Signup Form</h2>
+        <form action="/submit_signup" method="post">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your first name:" required>
+
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name:" required>
+
+            <label for="sport">Sport Event</label>
+            <input type="sport" id="sport" name="sport" placeholder="e.g freestyle 100m" required>
+
+            <label for="hostel">Hostel</label>
+            <select id="hostel" name="hostel" required>
+                <option value="vikings"></option>
+                <option value="vikings">Vikings</option>
+                <option value="spartans">Spartans </option>
+                <option value="titans">Titans</option>
+                <option value="trojans">Trojans</option>
+            </select>
+            <input type="submit" value="Sign Up">
+        </form>
+       </div>
+    </div>
+</body>
+</html>

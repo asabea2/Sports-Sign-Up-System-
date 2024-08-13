@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Login</title>
+    <link rel="stylesheet" href="loginscreen.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>School Login</h2>
+
+
+            <form id="teacher-login">
+            <h3>Teacher Login</h3>
+            <img src="soslogin.jpeg" alt="School Logo" class="login-image"> 
+
+            
+                <div class="input-box">
+                    <label for="teacher-id">Teacher Name</label>
+                    <input type="text" id="teacher-id" name="teacher-id" required>
+                </div>
+                <div class="input-box">
+                    <label for="teacher-password">Password</label>
+                    <input type="password" id="teacher-password" name="teacher-password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            
+            <button id="back-to-student-button">Back to Student Login</button>
+        </div>
+    </div>
+
+   
+    <script>
+        document.getElementById('back-to-student-button').addEventListener('click', function() {
+            window.location.href = 'Loginscreen.html';
+        });
+    </script>
+</body>
+</html>
